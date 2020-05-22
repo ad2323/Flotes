@@ -3,6 +3,7 @@
     Public Notes As New List(Of Form)
     Private Sub btn_spawner_Click(sender As Object, e As EventArgs) Handles btn_spawner.Click
         Dim x As New Note
+        x.init("New Note", True)
         x.Show()
         Notes.Add(x)
     End Sub
