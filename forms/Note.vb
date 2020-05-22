@@ -10,7 +10,14 @@
         _Title = title
         lbl_title.Text = title
         _OnTop = always_top
-        Me.TopMost = always_top
+        TopMost = always_top
+    End Sub
+
+    Public Function getPosition()
+        Return Location
+    End Function
+    Public Sub setPosition(x, y)
+        Location = New Point(x, y)
     End Sub
 
     Sub TitleTextBoxLostFocus(sender As TextBox, e As EventArgs)
@@ -25,7 +32,7 @@
     End Sub
     Private Sub btn_pin_Click(sender As Object, e As EventArgs) Handles btn_pin.Click
         _OnTop = Not _OnTop
-        Me.TopMost = _OnTop
+        TopMost = _OnTop
     End Sub
 
     Private Sub NoteBar_MouseDown(sender As Object, e As MouseEventArgs) Handles NoteBar.MouseDown, TitleBar.MouseDown, lbl_title.MouseDown
